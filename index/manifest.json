@@ -1,0 +1,14 @@
+{
+ "version": 2,
+ "built_at": "2026-11-25 12:12:43",
+ "settings": {
+  "chunk_words": 250,
+  "overlap_words": 50,
+  "min_chunk_words": 40
+ },
+ "files": {
+  "Feedback_Mapping_BRD_Final.pdf": "28ca0b8e66c89e3a8fd107cd72e41fda8ebaf0857a51afcd8726d8de9e0dc45a"
+ },
+ "skipped": {},
+ "chunk_count": 37
+}

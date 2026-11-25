@@ -5,6 +5,7 @@ numpy                     # needed by rank-bm25
 rank-bm25>=0.2.2          # BM25 ranking
 snowballstemmer>=3.1.1    # stemming: "employees" -> "employe"
 python-dotenv>=1.2.4      # loads the LLM settings and keys from .env
+streamlit>=1.67.0         # the chat window (app.py)
 
 # Only if you set VECTOR_STORE=chroma (talks to a running Chroma server over HTTP). Use this thin client,
 # not the full "chromadb" package, which cannot be installed on Python 3.15 (needs onnxruntime).

@@ -1,0 +1,335 @@
+[
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#1",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "BUSINESS REQUIREMENTS DOCUMENT / Feedback Mapping Module / Stores Management | WhatsApp Notification  |  Reciproci Platform / ...",
+  "page_start": 1,
+  "page_end": 1,
+  "text": "BUSINESS REQUIREMENTS DOCUMENT\nFeedback Mapping Module\nStores Management | WhatsApp Notification  |  Reciproci Platform\nDocument Version Final\nStatus Final\nModule Stores Management > Feedback Mapping\nPlatform Reciproci\nNotification Channel WhatsApp (Phase 1)\nDate 11 June 2026\nPrepared By BA Team\nDesign Source Developed UI screenshots (attached in Section 4)"
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#2",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "1. Purpose & Background",
+  "page_start": 1,
+  "page_end": 1,
+  "text": "1. Purpose & Background\nThis document defines the final business requirements for the Feedback Mapping submodule within Stores\nManagement on the Reciproci platform. The module enables marketing and loyalty team members to map\nFeedback url (EN/AR)s and WhatsApp Template IDs to stores by uploading a CSV file. Once configured, the\nsystem must send a personalized WhatsApp notification to customer’s post-transaction, featuring a Call-to-Action\n(CTA) button that links directly to the client's Voice of Customer (VoC) feedback survey.\nTwo existing modules underpin this feature:\n• Stores Module — manages POS and eCommerce channel stores.\n• Templates Module — stores pre-built WhatsApp notification templates with language variants.\nFeedback collection and analytics remain on the client's external VoC platform. Reciproci is responsible only for\nsending the WhatsApp notification."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#3",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "2. Stakeholders / Role Team Responsibility",
+  "page_start": 1,
+  "page_end": 2,
+  "text": "2. Stakeholders\nRole Team Responsibility\nMarketing / Loyalty User Client – Marketing Upload Feedback url (EN/AR)s and\nTemplate IDs; validate files; view history;\ndownload store records\nSystem Admin Reciproci / Client IT User access management;\nEnd Customer Client – Customer Base Receives personalised WhatsApp\nnotification; completes VoC survey\nVoC Platform Client – External System Hosts and collects feedback responses;\nowns the Feedback url (EN/AR)s"
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#4",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "3. Scope / 3.1 In Scope — Phase 1",
+  "page_start": 2,
+  "page_end": 2,
+  "text": "3. Scope\n3.1 In Scope — Phase 1\n• Feedback Mapping single-page UI under Stores Management.\n• Upload Name field and CSV upload via Browse Files or drag and drop.\n• Validate File: on-click pre-submission analysis showing Total Records and Store with Links.\n• Download Template: downloadable sample CSV from within the upload form.\n• Download Store List CSV: full store configuration export from the toolbar.\n• Upload history table: Upload ID, Upload Name, Total Stores, Download, Uploaded On, Uploaded By.\n• CSV merge logic: update, deactivate, and reject rows per defined rules.\n• Post-transaction WhatsApp notification — one per committed transaction.\n• Personalised notification: First Name and Store Name attributes only.\n• Language-preference dispatch from customer profile with fallback.\n• Notification tracking log.\n• Communication Channel Control Registry extensible for Phase 2."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#5",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "3.2 Out of Scope — Confirmed",
+  "page_start": 2,
+  "page_end": 2,
+  "text": "3.2 Out of Scope — Confirmed\nThe following are explicitly excluded from Phase 1 and must not be built.\n• Customer ID — not in notification payload or tracking log.\n• Transaction ID — not in notification payload or tracking log.\n• SMS and Email notification channels — Phase 2.\n• Per-customer channel preference and multi-channel fallback — Phase 2."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#6",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "4. UI Design — Confirmed Screens / 4.1 Screen 1 — Feedback Mapping List View",
+  "page_start": 3,
+  "page_end": 3,
+  "text": "4. UI Design — Confirmed Screens\nThe following screens are the accepted design source of truth for development. All field names, layouts, labels,\nand interactions described in this document are based on these screens.\n4.1 Screen 1 — Feedback Mapping List View\nScreen 1: Feedback Mapping list — upload history table with Search, Download Store List CSV, and Upload feedback url\n(EN/AR)s controls.\nKey elements confirmed from this screen:\n• Page name: 'Feedback Mapping' (breadcrumb and page title).\n• Sidebar item: 'Feedback Mapping' under Stores Management, highlighted in orange.\n• Search bar centered between breadcrumb and action buttons.\n• 'Download Store List CSV' link — top right, before the Upload button.\n• 'Upload feedback URL’s' button — orange, top right.\n• Upload history table columns: Upload ID, Upload Name, Total Stores, Download (CSV icon + download\nicon), Uploaded On, Uploaded By."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#7",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "4.2 Screen 2 — Upload Form (File Uploading)",
+  "page_start": 4,
+  "page_end": 4,
+  "text": "4.2 Screen 2 — Upload Form (File Uploading)\nScreen 2: Upload form expanded inline — Upload Name field, Browse Files (left), file name + progress bar + Validate button\n(right), CANCEL and UPLOAD actions.\nKey elements confirmed from this screen:\n• Upload Name field with asterisk underline-only input style, no box border.\n• Left panel: cloud upload icon, orange 'Browse Files' button, 'Max size support: 500 entries' hint.\n• 'Download Template' link directly below Browse Files (inside the left panel).\n• Rules text below Download Template: file must be CSV, columns must match sample, all details must be\nfilled in.\n• Right panel: attached file shown with CSV icon, file name, file size, and a blue progress bar showing\nupload percentage ('Uploading... 72%').\n• Orange 'Validate' button positioned below the file info on the right.\n• 'CANCEL' (dark) and 'UPLOAD' (orange) action buttons — bottom right of the form."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#8",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "4.3 Screen 3 — Upload Form (After Validation)",
+  "page_start": 5,
+  "page_end": 5,
+  "text": "4.3 Screen 3 — Upload Form (After Validation)\nScreen 3: After Validate is clicked — progress bar shows 'Uploaded', Total Records (23) and Store with Links (10) appear\nabove the Validate button.\nKey elements confirmed from this screen:\n• Progress bar completes and label changes to 'Uploaded' in green.\n• Two metrics appear above the Validate button: 'Total Records' with value and 'Store with Links' with\nvalue.\n• 'Download Template' label (confirmed in this screen as the link inside the form).\n• History table is visible below the form on the same page — confirming single-page layout."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#9",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "5. Field & Label Reference / 5.1 Upload Form Fields / Field / Control Label (as shown) Type Behaviour / ...",
+  "page_start": 5,
+  "page_end": 5,
+  "text": "5. Field & Label Reference\nAll field names and labels are as confirmed in the developed screens.\n5.1 Upload Form Fields\nField / Control Label (as shown) Type Behaviour\nUpload Name Upload Name * Underline text\ninput\nMandatory. Free text. Placeholder: 'New\nStores June 2026'.\nBrowse Files Browse Files Orange button Opens file browser. Accepts CSV only.\nFile size hint Max size support:"
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#10",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "500 entries / Download Template Download / Template / ...",
+  "page_start": 5,
+  "page_end": 5,
+  "text": "500 entries\nStatic text Shown below Browse Files.\nDownload Template Download\nTemplate\nLink (below\nBrowse Files)\nDownloads the sample CSV template file.\nRules text (no label) Static\ndescriptive text\nFile must be CSV; columns must match\nsample; all details filled in.\nFile info row (no label) Auto-populated\non attach\nShows CSV icon, file name, file size, blue\nprogress bar, and upload % or 'Uploaded'."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#11",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "Validate Validate Orange button / Field / Control Label (as shown) Type Behaviour",
+  "page_start": 5,
+  "page_end": 6,
+  "text": "Validate Validate Orange button\n(right panel)\nOn click: shows Total Records and Store\nwith Links above the button.\nField / Control Label (as shown) Type Behaviour\nCancel CANCEL Dark button Collapses the form without saving.\nUpload UPLOAD Orange button Submits the file. Active only after file is\nattached."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#12",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "5.2 Validate File — Metrics / UI Label Industry Name Definition",
+  "page_start": 6,
+  "page_end": 6,
+  "text": "5.2 Validate File — Metrics\nUI Label Industry Name Definition\nTotal Records Total Records Count of all data rows in the CSV file, excluding the\nheader row.\nStore with Links Configured Records Count of rows where both Feedback url (EN/AR)\nand WhatsApp Template ID are present."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#13",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "5.3 Upload History Table Columns / Column Description",
+  "page_start": 6,
+  "page_end": 6,
+  "text": "5.3 Upload History Table Columns\nColumn Description\nUPLOAD ID Auto-generated sequential integer per upload.\nUPLOAD NAME Name entered by the user at upload time.\nTOTAL STORES Total number of rows in the uploaded CSV (including rejected rows).\nDOWNLOAD CSV icon + download icon. Downloads the original uploaded file for that\nbatch.\nUPLOADED ON Date the upload was submitted. Format: YYYY-MM-DD.\nUPLOADED BY Name of the authenticated user who performed the upload."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#14",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "5.4 Download Store List CSV — Confirmed Columns / Column Source Blank If Missing",
+  "page_start": 6,
+  "page_end": 6,
+  "text": "5.4 Download Store List CSV — Confirmed Columns\nThese are the only Six columns in the Download Store List CSV. No additional columns.\nColumn Source Blank If Missing\nStore ID Stores module Never blank\nStore Name Stores module Never blank\nFeedback URL (EN) Upload configuration Yes — blank if not\nconfigured\nFeedback URL (AR) Upload configuration Yes — blank if not\nconfigured\nTemplate ID Upload configuration Yes — blank if not\nconfigured\nUploaded On Upload history Yes — blank if store never\nuploaded"
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#15",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "6. Business Requirements / BR-01: Store Feedback Configuration",
+  "page_start": 7,
+  "page_end": 7,
+  "text": "6. Business Requirements\nBR-01: Store Feedback Configuration\nEach store is mapped to exactly Feedback url (EN/AR) and one WhatsApp Template ID. If either is missing, no\nnotification is sent for transactions at that store.\n• Active Feedback URL(EN/AR) and one active Template ID per store at any time.\n• Template ID must reference an active WhatsApp template in the Templates module.\n• Both fields validated at upload time; invalid Template IDs cause the row to be rejected."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#16",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "BR-02: CSV Upload / 6.2.1 Required CSV Format / Column Type Mandatory Description",
+  "page_start": 7,
+  "page_end": 7,
+  "text": "BR-02: CSV Upload\n6.2.1 Required CSV Format\nColumn Type Mandatory Description\nStore ID String Yes Must exist in the Stores module.\nStore Name String No Reference only — not updated by upload.\nFeedback URL (EN) URL Conditional* VoC survey link for this store.\nFeedback URL (AR) URL Conditional* VoC survey link for this store.\nWhatsApp Template ID String Conditional* Must reference an active WhatsApp template."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#17",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "BR-03: Validate File",
+  "page_start": 7,
+  "page_end": 7,
+  "text": "BR-03: Validate File\nValidate File is a pre-submission read-only analysis of the attached CSV. No data is committed.\n• Runs on the attached file only — no database lookups at this stage.\n• Returns: Total Records (all data rows) and Store with Links (rows with both URL and Template ID\npopulated).\n• If no file is attached, shows: 'Please attach a file first.'\n• Replacing the file resets, the validation results."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#18",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "BR-04: Post-Transaction WhatsApp Notification",
+  "page_start": 7,
+  "page_end": 7,
+  "text": "BR-04: Post-Transaction WhatsApp Notification\n• Trigger: transaction committed event received in real time from POS or eCommerce system.\n• One notification per transaction. No cooldown or de-duplication applied.\n• Notification includes Call-to-Action (CTA) button that links directly to the client's Voice of Customer (VoC)\nfeedback survey.\n• If store is inactive or unconfigured: notification suppressed silently."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#19",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "BR-05: Personalised Notification Attributes / Attribute Source Fallback",
+  "page_start": 8,
+  "page_end": 8,
+  "text": "BR-05: Personalised Notification Attributes\nThe WhatsApp message uses exactly two personalisation attributes:\nAttribute Source Fallback\nFirst Name Customer profile — first name field If unavailable: use 'Customer'\nStore Name Store configuration — store name field No. Store name is mandatory."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#20",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "BR-06: Language-Preference Dispatch / BR-07: Notification Payload",
+  "page_start": 8,
+  "page_end": 8,
+  "text": "BR-06: Language-Preference Dispatch\n• Language retrieved from customer profile at dispatch time.\n• Matching language variant of the WhatsApp template is selected.\n• Fallback to template default language if variant unavailable.\n• Phase 1 languages: English and Arabic minimum.\nBR-07: Notification Payload"
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#21",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "Field Source In Payload",
+  "page_start": 8,
+  "page_end": 8,
+  "text": "Field Source In Payload\nStore ID Transaction event Yes — routing and logging\nStore Name Stores module Yes — personalisation attribute\nFirst Name Customer profile Yes — personalisation attribute\nFeedback url (EN/AR) Store configuration Yes — included in message\nbody\nWhatsApp Template ID Store configuration Yes — identifies template used\nLanguage Customer profile Yes — determines template\nvariant"
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#22",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "Channel Channel Registry Yes — Phase 1: WhatsApp / BR-08: Notification Tracking Log",
+  "page_start": 8,
+  "page_end": 8,
+  "text": "Channel Channel Registry Yes — Phase 1: WhatsApp\nTimestamp System-generated Yes — date and time of\ndispatch\nBR-08: Notification Tracking Log\n• Every dispatch event logged with BR-07 fields (excluding out-of-scope fields).\n• Status: Sent, Failed, Pending, Suppressed, Channel Unavailable.\n• Filterable by: store, channel, date range, status.\n• Failed notifications highlighted for investigation."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#23",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "BR-09: Channel Control Registry / 6.9.1 Phase 1 Channel Registry State / Channel Status Phase Upload Validation Dispatch / ...",
+  "page_start": 8,
+  "page_end": 9,
+  "text": "BR-09: Channel Control Registry\n6.9.1 Phase 1 Channel Registry State\nChannel Status Phase Upload Validation Dispatch\nWhatsApp ACTIVE Phase 1 Template IDs accepted Dispatches\n6.9.2 Phase 2 Activation\nTo activate SMS or Email, a System Admin. No code deployment required there should be provision to enable\nonce requested from BA team."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#24",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "7. User Stories & Acceptance Criteria / US-01: Upload Store Feedback Mapping / Field Detail",
+  "page_start": 9,
+  "page_end": 9,
+  "text": "7. User Stories & Acceptance Criteria\nUS-01: Upload Store Feedback Mapping\nField Detail\nUser Story As a marketing/loyalty user, I want to upload a CSV from the Feedback Mapping page\nso I can map Feedback url (EN/AR)s and WhatsApp Template IDs to stores without\nleaving the screen.\nAcceptance Criteria Given I am on the Feedback Mapping page, When I click 'Upload feedback URLs'\n(EN/AR), Then the upload form expands on the same page. And I enter an Upload\nName, attach a CSV via Browse Files or drag and drop, and click UPLOAD. Then the\nform closes and the history table refreshes with the new batch."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#25",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "US-02: Validate File Before Upload / Field Detail",
+  "page_start": 9,
+  "page_end": 9,
+  "text": "US-02: Validate File Before Upload\nField Detail\nUser Story As a marketing/loyalty user, I want to validate my CSV before uploading so I can check\nTotal Records and Store with Links without saving any data.\nAcceptance Criteria Given I have attached a CSV file, When I click 'Validate', Then 'Total Records' and\n'Store with Links' appear above the Validate button. And no data is committed to the\nsystem. And replacing the file clears the results."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#26",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "US-03: Download Template / Field Detail",
+  "page_start": 9,
+  "page_end": 9,
+  "text": "US-03: Download Template\nField Detail\nUser Story As a marketing/loyalty user, I want to download a sample CSV template from within\nthe upload form so I know the required column format.\nAcceptance Criteria Given I open the upload form, When I click 'Download Template', Then a CSV file\ndownloads containing the required column headers: Store ID, Store Name, Feedback\nurl (EN/AR), WhatsApp Template ID."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#27",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "US-04: Download Store List CSV / Field Detail",
+  "page_start": 9,
+  "page_end": 9,
+  "text": "US-04: Download Store List CSV\nField Detail\nUser Story As a marketing/loyalty user, I want to download the current store list as a CSV so I can\naudit all store feedback mappings.\nAcceptance Criteria Given I click 'Download Store List CSV' in the toolbar, Then a CSV downloads with\nexactly five columns: Store ID, Store Name, Feedback url (EN/AR), Template ID,\nUploaded On. And all stores are included regardless of status. And stores with no\nFeedback url (EN/AR) or Template ID show blank in those columns."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#28",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "US-05: Receive Personalised WhatsApp Notification / Field Detail",
+  "page_start": 10,
+  "page_end": 10,
+  "text": "US-05: Receive Personalised WhatsApp Notification\nField Detail\nUser Story As a customer, I want to receive a personalised WhatsApp notification in my preferred\nlanguage after a transaction so I can complete the feedback survey.\nAcceptance Criteria Given a committed transaction at an active, fully configured store, When the\ntransaction event is received, Then one WhatsApp notification is sent using First Name\nand Store Name as personalisation attributes. And the message includes the Call to\nAction Button which redirects the Feedback url (EN/AR). And the message is in the\ncustomer's preferred language (fallback to template default)."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#29",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "8. Business Rules / Rule ID Rule Name Rule",
+  "page_start": 10,
+  "page_end": 10,
+  "text": "8. Business Rules\nRule ID Rule Name Rule\nBRL-01 One Mapping Per Store Each store has active Feedback url (EN/AR) and one active\nWhatsApp Template ID.\nBRL-02 Notification Suppression If URL or Template ID is missing, store is inactive, or channel is\nunavailable — notification is suppressed silently."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#30",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "BRL-03 One Notification Per / Transaction",
+  "page_start": 10,
+  "page_end": 10,
+  "text": "BRL-03 One Notification Per\nTransaction\nEach committed transaction generates exactly one notification.\nBRL-04 Language Fallback If preferred language variant is unavailable, use the template\ndefault language (EN).\nBRL-05 Personalisation Fallback First Name unavailable → 'Customer'. Store Name should\nalways be there."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#31",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "BRL-06 Template Validation at / Upload",
+  "page_start": 10,
+  "page_end": 10,
+  "text": "BRL-06 Template Validation at\nUpload\nTemplate IDs must exist as active WhatsApp templates. Invalid\nIDs reject the row.\nBRL-07 Store Must Exist Store IDs in the upload must exist in the Stores module.\nUnknown IDs are rejected.\nBRL-08 CSV Only Only CSV files accepted. All other file types rejected before\nprocessing.\nBRL-09 Duplicate Row If Store ID appears more than once, first occurrence is applied.\nBRL-11 Validate Is Read-Only Validate performs no database writes. File analysis only."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#32",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "BRL-12 No Customer / Transaction / BRL-13 Download CSV Fixed / Columns",
+  "page_start": 10,
+  "page_end": 10,
+  "text": "BRL-12 No Customer / Transaction\nID\nCustomer ID and Transaction ID are not captured, stored, or\nsent in any payload. Confirmed out of scope.\nBRL-13 Download CSV Fixed\nColumns\nDownload Store List CSV always has exactly five columns:\nStore ID, Store Name, Feedback url (EN/AR), Template ID,\nUploaded On.\nBRL-14 Phase 1 Channel Lock Only ACTIVE channels in the Channel Registry may dispatch.\nWhatsApp is the only ACTIVE channel in Phase 1."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#33",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "9. Process Flows / 9.1 Upload Process",
+  "page_start": 10,
+  "page_end": 11,
+  "text": "9. Process Flows\n9.1 Upload Process\n1. User navigates to Stores Management > Feedback Mapping.\n2. Clicks 'Upload feedback url (EN/AR)s'. Upload form expands on the same page.\n3. Enters Upload Name. Attaches CSV via Browse Files or drag and drop.\n4. (Optional) Clicks 'Validate'. Total Records and Store with Links appear. No data saved.\n5. Clicks UPLOAD. System validates: file format, mandatory columns, Store IDs, Template IDs.\n6. Form closes. History table refreshes with new batch at top."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#34",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "9.2 Post-Transaction Notification Process",
+  "page_start": 11,
+  "page_end": 11,
+  "text": "9.2 Post-Transaction Notification Process\n7. Transaction committed event received from POS or eCommerce system.\n8. Store ID extracted from event.\n9. Channel Registry checked only ACTIVE channels eligible.\n10. Store configuration checked active Feedback url (EN/AR) and Template ID required.\n11. If inactive or unconfigured: notification suppressed.\n12. Customer's First Name and preferred language retrieved from customer profile.\n13. Store Name retrieved from Stores module.\n14. Matching language variant of WhatsApp template selected (fallback to default).\n15. Personalisation attributes injected: {{First Name}} and {{Store Name}}.\n16. WhatsApp notification dispatched with Feedback url (EN/AR) within Call to action Button.\n17. Dispatch event logged with all BR-07 fields and delivery status."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#35",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "10. Non-Functional Requirements / ID Category Requirement",
+  "page_start": 11,
+  "page_end": 11,
+  "text": "10. Non-Functional Requirements\nID Category Requirement\nNFR-01 Performance Notification dispatch within 30 seconds of transaction committed event.\nNFR-02 Performance CSV upload processing within 60 seconds for up to 500 rows.\nNFR-03 Performance Validate File response within 3 seconds for up to 500 rows.\nNFR-04 Performance Feedback Mapping page loads within 3 seconds.\nNFR-05 Reliability Notification failure logged without affecting store or transaction data.\nNFR-06 Scalability Concurrent transaction events across all active stores handled without\ndegradation.\nNFR-07 Auditability All upload events stored and visible in the history table.\nNFR-08 Data Integrity CSV upload atomic per row — failure on one row does not affect others.\nNFR-09 Extensibility Channel Registry supports new channel activation via config update — no\ncode deployment.\nNFR-10 Usability Upload, validate, view history, and download all available on the single\nFeedback Mapping page."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#36",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "11. Assumptions & Dependencies / 11.1 Assumptions",
+  "page_start": 11,
+  "page_end": 12,
+  "text": "11. Assumptions & Dependencies\n11.1 Assumptions\n• All Store IDs to be mapped already exist in the Stores module.\n• WhatsApp templates with language variants (EN, AR minimum) exist in the Templates module before\nuse.\n• Customer profiles always contain a non-null preferred language and first name.\n• Transaction committed events delivered to Reciproci in real time.\n• Client's VoC platform generates Feedback url (EN/AR)s independently.\n• Customer ID and Transaction ID are excluded — no future change without a new requirement."
+ },
+ {
+  "id": "Feedback_Mapping_BRD_Final.pdf#37",
+  "doc": "Feedback_Mapping_BRD_Final.pdf",
+  "title": "Feedback Mapping BRD Final",
+  "section": "11.2 Dependencies / Dependency Module / System Phase / Store ID validation Stores Module Phase 1 / ...",
+  "page_start": 12,
+  "page_end": 12,
+  "text": "11.2 Dependencies\nDependency Module / System Phase\nStore ID validation Stores Module Phase 1\nTemplate ID validation and language\nvariants\nTemplates Module Phase 1\nCustomer First Name and preferred\nlanguage\nCustomer Profile Phase 1\nStore Name for personalisation Stores Module Phase 1\nTransaction committed events POS / eCommerce integration Phase 1\nUser access control User Management Module Phase 1\nWhatsApp notification dispatch WhatsApp Business API Phase 1\nSMS gateway TBD Phase 2\nEmail gateway TBD Phase 2\n— End of Document —\nVersion 4.0 Final | Reciproci Platform | Feedback Mapping Module"
+ }
+]
