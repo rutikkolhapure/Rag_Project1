@@ -1,0 +1,14 @@
+# Lower bounds are the versions this project was built and tested with (Python 3.15).
+# The LLM and embeddings calls (LLM_PROVIDER=openai) use only the Python standard library.
+pypdf>=7.1.1              # reads the PDFs
+numpy                     # needed by rank-bm25
+rank-bm25>=0.2.2          # BM25 ranking
+snowballstemmer>=3.1.1    # stemming: "employees" -> "employe"
+python-dotenv>=1.2.4      # loads the LLM settings and keys from .env
+
+# Only if you set VECTOR_STORE=chroma (talks to a running Chroma server over HTTP). Use this thin client,
+# not the full "chromadb" package, which cannot be installed on Python 3.15 (needs onnxruntime).
+#   chromadb-client>=1.5.9
+
+# Only if you choose LLM_PROVIDER=anthropic (Claude), also install:
+#   anthropic>=2.10.0

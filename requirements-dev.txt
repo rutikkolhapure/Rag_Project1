@@ -1,0 +1,3 @@
+-r requirements.txt
+reportlab>=5.1.0          # only used by tests/ to create sample PDFs
+chromadb-client>=1.5.9    # only so the Chroma tests run (they are skipped without it)
